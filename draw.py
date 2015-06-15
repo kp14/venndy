@@ -64,8 +64,7 @@ def _create_label_dict(labels, data_length):
 
     if labels:
         if not len(labels) == data_length:
-            sys.exit('Incorrect number of labels for data set:'
-                     '{0} vs. {1}'.format(str(len(labels), str(data_length))))
+            sys.exit('Incorrect number of labels for data set.')
         else:
             for k, v in zip(default, labels):
                 label_dict[k] = str(v)
@@ -88,4 +87,4 @@ if __name__ == '__main__':
     e = [1,2,3,4,5,15,25,35,45,80]
     
     with open('test.svg', 'w') as f:
-        f.write(draw([a,b,c,d,e], labels='klmno'))
+        f.write(draw([a,b,c,d], labels='klmn'))
