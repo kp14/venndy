@@ -41,8 +41,8 @@ def draw(data, labels=None):
 
     lbls = _create_label_dict(labels, data_length)
 
-    for key, val in compute.compute_sections('blah'):
-        lbls[key] = val
+    for key, val in compute.compute_sections('blah', mode='length'):
+        lbls[key] = str(val)
 
     env = Environment(loader=FileSystemLoader('./templates'))
     template = env.get_template('{}_set.svg'.format(str(data_length)))
