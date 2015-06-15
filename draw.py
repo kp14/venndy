@@ -15,6 +15,49 @@ Created on Mon Jun 15 15:34:04 2015
 
 @author: kp14
 """
+import sys
 from jinja2 import Environment, PackageLoader
 
 
+def draw(data, labels=None):
+    '''Draws Venn diagrams for data sets/lists.
+
+    At maximum, five sets/lists will be accepted. If not labels are provided,
+    uppercase letters will be used.
+
+    Parameters:
+    data: list of sets/lists
+    labels: list of strings
+
+    Returns:
+    Rendered Venn diagram in SVG format.
+    '''
+    data_length = len(data)
+
+    if data_length > 5:
+        sys.exit('Too many sets/lists in data. Maximum is five.')
+
+    lbls = _create_label_dict(labels, data_length)
+
+
+
+def _create_label_dict(labels, data_length):
+    default = 'ABCDE'
+    label_dict = {'A':None,
+                  'B': None,
+                  'C': None,
+                  'D': None,
+                  'E': None}
+
+    if labels:
+        if not len(labels) == data_length:
+            sys.exit('Incorrect number of labels for data set:'
+                     '{0} vs. {1}'.format(str(len(labels), str(data_length))))
+        else:
+            for k, v in zip(default, labels):
+                label_dict[k] = str(v)
+    else:
+        for lbl in default:
+            label_dict[lbl] = lbl
+
+    return label_dict
