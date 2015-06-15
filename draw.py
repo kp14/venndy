@@ -73,8 +73,18 @@ def _create_label_dict(labels, data_length):
             label_dict[lbl] = lbl
 
     return label_dict
+    
+    
+def _numerical_iterable2string(iterable):
+    return ''.join([str(x) for x in iterable])
 
 
 if __name__ == '__main__':
+    a = list(range(0, 10))
+    b = list(range(1, 11))
+    c = list(range(2, 12))
+    d = list(range(3, 13))
+    e = list(range(4, 14))
+    
     with open('test.svg', 'w') as f:
-        f.write(draw('klmno', labels='klmno'))
+        f.write(draw([a,b,c,d,e], labels='klmno'))
