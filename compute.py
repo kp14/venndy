@@ -19,21 +19,7 @@ import itertools
 from decimal import Decimal
 
 
-def compute_sections(data, mode='sets'):
-
-    for idx, combi in enumerate(itertools.product([0,1], repeat=5)):
-        lbl = ''.join([str(x) for x in combi])
-        set_ = set(range(idx, idx + 5))
-
-        if mode == 'length':
-            datum = len(set_)
-        else:
-            datum = set_
-
-        yield lbl, datum
-
-
-def compute_venn_sections(data, mode='set'):
+def compute_sections(data, mode='set'):
     '''Compute data sections of Venn diagrams.
 
     Data is supposed to be a list of sets or at least a list of lists.
@@ -45,15 +31,19 @@ def compute_venn_sections(data, mode='set'):
     Parameters:
     data: list of sets or list of lists, arbitraty length
     mode: 'set', 'length' or 'normalized'; default: 'set'
+    
+    Returns:
+    combination(as set), section (as set)
     '''
-    no_of_sets = len(data)
-    all_datapoints = Decimal(len(set.union(*data)))
+    data_sets = _ensure_set(data)
+    no_of_sets = len(data_sets)
+    all_datapoints = Decimal(len(set.union(*data_sets)))
 
     combinations = itertools.product(range(2), repeat=no_of_sets)
 
     for combi in combinations:
-        to_intersect = _sets_to_be_intersected(data, combi)
-        to_union = _sets_to_be_unioned(data, combi)
+        to_intersect = _sets_to_be_intersected(data_sets, combi)
+        to_union = _sets_to_be_unioned(data_sets, combi)
 
         if to_intersect:
             if len(to_intersect) == 1 and len(to_union) == 1:
@@ -92,6 +82,10 @@ def _sets_to_be_unioned(data, selectors):
     for item in compress_negative(data, selectors):
         to_union.append(item)
     return to_union
+    
+    
+def _ensure_set(data):
+    return [set(x) for x in data]
 
 
 def compress_negative(data, selectors):

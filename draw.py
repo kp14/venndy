@@ -41,8 +41,9 @@ def draw(data, labels=None):
 
     lbls = _create_label_dict(labels, data_length)
 
-    for key, val in compute.compute_sections('blah', mode='length'):
-        lbls[key] = str(val)
+    for key, val in compute.compute_sections(data, mode='length'):
+        key_string = _numerical_iterable2string(key)
+        lbls[key_string] = str(val)
 
     env = Environment(loader=FileSystemLoader('./templates'))
     template = env.get_template('{}_set.svg'.format(str(data_length)))
@@ -80,11 +81,11 @@ def _numerical_iterable2string(iterable):
 
 
 if __name__ == '__main__':
-    a = list(range(0, 10))
-    b = list(range(1, 11))
-    c = list(range(2, 12))
-    d = list(range(3, 13))
-    e = list(range(4, 14))
+    a = [1,2,3,4,5,12,13,14,15,84]
+    b = [1,2,3,4,5,12,23,24,25,83]
+    c = [1,2,3,4,5,13,23,34,35,82]
+    d = [1,2,3,4,5,14,24,34,45,81]
+    e = [1,2,3,4,5,15,25,35,45,80]
     
     with open('test.svg', 'w') as f:
         f.write(draw([a,b,c,d,e], labels='klmno'))
