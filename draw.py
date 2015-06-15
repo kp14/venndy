@@ -16,7 +16,9 @@ Created on Mon Jun 15 15:34:04 2015
 @author: kp14
 """
 import sys
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment, FileSystemLoader
+
+import compute
 
 
 def draw(data, labels=None):
@@ -38,6 +40,16 @@ def draw(data, labels=None):
         sys.exit('Too many sets/lists in data. Maximum is five.')
 
     lbls = _create_label_dict(labels, data_length)
+
+    for key, val in compute.compute_sections('blah'):
+        lbls[key] = val
+
+    env = Environment(loader=FileSystemLoader('./templates'))
+    template = env.get_template('{}_set.svg'.format(str(data_length)))
+
+    print(lbls)
+
+    return template.render(lbls)
 
 
 
@@ -61,3 +73,8 @@ def _create_label_dict(labels, data_length):
             label_dict[lbl] = lbl
 
     return label_dict
+
+
+if __name__ == '__main__':
+    with open('test.svg', 'w') as f:
+        f.write(draw('klmno', labels='klmno'))

@@ -18,3 +18,7 @@ Created on Mon Jun 15 15:34:04 2015
 import itertools
 
 
+def compute_sections(data, mode='sets'):
+
+    for idx, combi in enumerate(itertools.product([0,1], repeat=5)):
+        yield ''.join([str(x) for x in combi]), set(range(idx, idx + 5))
