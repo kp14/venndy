@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import setup
 
 def readme():
     with open('README.md') as f:
         return f.read()
 
 setup(name='venn',
-      version='0.2',
+      version='0.3',
       description='Venn diagram sections and plots for arbitrary nuber of sets and max. 5 sets, respectively.',
       long_description=readme(),
       classifiers=[
@@ -19,6 +19,7 @@ setup(name='venn',
       author='kp14',
       author_email='',
       license='Public Domain',
-      packages=find_packages(),
+      packages=['venn'],
+      package_data={'venn':['templates/*.svg']},
       install_requires=[ 'jinja2' ],
       include_package_data=True)
