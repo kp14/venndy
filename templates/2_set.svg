@@ -168,7 +168,7 @@
          id="tspan3056"
          x="25.000004"
          y="430.19998"
-         style="font-size:8px">{{ 10 }}</tspan></text>
+         style="font-size:8px">{{ IO }}</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3058"
@@ -180,7 +180,7 @@
          y="49.485687"
          x="578.57141"
          id="tspan3060"
-         sodipodi:role="line">{{ 01 }}</tspan></text>
+         sodipodi:role="line">{{ OI }}</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -192,7 +192,7 @@
          id="tspan3064"
          x="582.14288"
          y="428.77142"
-         style="font-size:8px">{{ 11 }}</tspan></text>
+         style="font-size:8px">{{ II }}</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
