@@ -70,6 +70,22 @@ def compute_sections(data, mode='set'):
             yield combi, section
 
 
+def _compute_combinations_for_venn_sections(repeat):
+    '''Encode sections of Venn diagrams as True/False combinations.
+
+    Sections in Venn diagrams are computed by interseting some datasets and
+    subtracting the union of the remainder. These combinations can be represented
+    using 0's and 1's. Example: AiB_CuD would be 1100, AiD_BuC would be 1001.
+
+    Parameters:
+    repeat: number of repeats in products
+
+    Returns:
+    tuple (generator)
+    '''
+    for combi in itertools.product(range(2), repeat=repeat):
+        yield combi
+
 def _sets_to_be_intersected(data, selectors):
     '''Sort sets that map to a 1/True in selectors into a list.
 
