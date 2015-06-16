@@ -16,9 +16,9 @@ Created on Mon Jun 15 15:34:04 2015
 @author: kp14
 """
 import sys
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, PackageLoader
 
-import compute
+from . import compute
 
 
 def draw(data, labels=None):
@@ -45,7 +45,7 @@ def draw(data, labels=None):
         key_string = _numerical_iterable2string(key)
         lbls[key_string] = str(val)
 
-    env = Environment(loader=FileSystemLoader('./templates'))
+    env = Environment(loader=PackageLoader('venn', 'templates'))
     template = env.get_template('{}_set.svg'.format(str(data_length)))
 
     print(lbls)
