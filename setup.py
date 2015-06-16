@@ -6,7 +6,7 @@ def readme():
         return f.read()
 
 setup(name='venn',
-      version='0.1',
+      version='0.2',
       description='Venn diagram sections and plots for arbitrary nuber of sets and max. 5 sets, respectively.',
       long_description=readme(),
       classifiers=[

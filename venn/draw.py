@@ -48,8 +48,6 @@ def draw(data, labels=None):
     env = Environment(loader=PackageLoader('venn', 'templates'))
     template = env.get_template('{}_set.svg'.format(str(data_length)))
 
-    print(lbls)
-
     return template.render(lbls)
 
 
