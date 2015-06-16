@@ -31,7 +31,7 @@ def compute_sections(data, mode='set'):
     Parameters:
     data: list of sets or list of lists, arbitraty length
     mode: 'set', 'length' or 'normalized'; default: 'set'
-    
+
     Returns:
     combination(as set), section (as set)
     '''
@@ -71,6 +71,15 @@ def compute_sections(data, mode='set'):
 
 
 def _sets_to_be_intersected(data, selectors):
+    '''Sort sets that map to a 1/True in selectors into a list.
+
+    Parameters:
+    data: list of sets
+    selectors: list of 0's and 1's
+
+    Returns:
+    list of sets or empty list
+    '''
     to_intersect = []
     for item in itertools.compress(data, selectors):
         to_intersect.append(item)
@@ -78,18 +87,36 @@ def _sets_to_be_intersected(data, selectors):
 
 
 def _sets_to_be_unioned(data, selectors):
+    '''Sort sets that map to a 0/False in selectors into a list.
+
+    Parameters:
+    data: list of sets
+    selectors: list of 0's and 1's
+
+    Returns:
+    list of sets or empty list
+    '''
     to_union = []
     for item in compress_negative(data, selectors):
         to_union.append(item)
     return to_union
-    
-    
+
+
 def _ensure_set(data):
+    '''Make sure that we have a list of sets.
+
+    Parameters:
+    data: list of iterables
+
+    Returns:
+    list of sets
+    '''
     return [set(x) for x in data]
 
 
 def compress_negative(data, selectors):
     '''Complements itertools.compress by returning only False-mapping values.
 
-    # compress('ABCDEF', [1,0,1,0,1,1]) --> B D'''
+    # compress('ABCDEF', [1,0,1,0,1,1]) --> B D
+    '''
     return (d for d, s in zip(data, selectors) if not s)
