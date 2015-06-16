@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def readme():
     with open('README.md') as f:
@@ -19,6 +19,6 @@ setup(name='venn',
       author='kp14',
       author_email='',
       license='Public Domain',
-      packages=['venn'],
+      packages=find_packages(),
       install_requires=[ 'jinja2' ],
       include_package_data=True)
