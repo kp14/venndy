@@ -4,7 +4,7 @@ Created on Wed Jun 17 21:14:09 2015
 
 @author: kp14
 """
-from ..venn import compute
+from venn import compute
 
 def test_ensure_set_with_lists():
     test_list = [list(range(10)),
@@ -16,8 +16,8 @@ def test_ensure_set_with_lists():
     assert len(set_list) == 4
     for item in set_list:
         assert isinstance(item, set)
-        
-        
+
+
 def test_ensure_set_with_sets():
     test_list = [set(list(range(10))),
                  set(list(range(5))),
@@ -28,10 +28,12 @@ def test_ensure_set_with_sets():
     assert len(set_list) == 4
     for item in set_list:
         assert isinstance(item, set)
-        
-        
+
+
 def test_compress_negative():
     data = 'ABCDEF'
     selectors = [1, 0, 1, 0, 1, 0]
-    compressed = compute.compress_negative(data, selectors)
-    assert compressed == ('A', 'C', 'E')
+    compressed = []
+    for item in compute.compress_negative(data, selectors):
+        compressed.append(item)
+    assert compressed == ['B', 'D', 'F']
