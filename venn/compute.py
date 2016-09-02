@@ -31,6 +31,10 @@ def compute_sections(data, mode='set'):
     Parameters:
     data: list of sets or list of lists, arbitraty length
     mode: 'set', 'length' or 'normalized'; default: 'set'
+          'set' - returns the actual set
+          'length' - returns length of the set, i.e., an int
+          'normalized' - returns length of set divided by length of all data
+                         points, i.e., percentage
 
     Returns:
     combination(as set), section (as set)
