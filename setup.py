@@ -25,9 +25,9 @@ def find_version(*file_paths):
 
 long_description = read('README')
 
-setup(name='venn',
-      version=find_version('venn', '__init__.py'),
-      description='Venn diagram sections and plots for arbitrary nuber of sets and max. 5 sets, respectively.',
+setup(name='venndy',
+      version=find_version('venndy', '__init__.py'),
+      description='Compute and draw Venn diagrams.',
       long_description=long_description,
       classifiers=[
         'Development Status :: 4 - Beta',
