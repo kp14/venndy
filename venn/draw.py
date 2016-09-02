@@ -92,14 +92,3 @@ def _numerical_iterable2string(iterable):
     string
     '''
     return ''.join(['I' if x else 'O' for x in iterable])
-
-
-if __name__ == '__main__':
-    a = [1,2,3,4,5,12,13,14,15,84]
-    b = [1,2,3,4,5,12,23,24,25,83]
-    c = [1,2,3,4,5,13,23,34,35,82]
-    d = [1,2,3,4,5,14,24,34,45,81]
-    e = [1,2,3,4,5,15,25,35,45,80, 100, 200, 300, 11]
-
-    with open('test.svg', 'w') as f:
-        f.write(draw([a,b]))
