@@ -45,7 +45,7 @@ def draw(data, labels=None):
         key_string = _numerical_iterable2string(key)
         lbls[key_string] = str(val)
 
-    env = Environment(loader=PackageLoader('venn', 'templates'))
+    env = Environment(loader=PackageLoader('venndy', 'templates'))
     template = env.get_template('{}_set.svg'.format(str(data_length)))
 
     return template.render(lbls)
