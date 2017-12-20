@@ -28,16 +28,17 @@ def compute_sections(data, mode='set'):
     i.e., the length of the sets, or fractions, i.e., the normalized lengths
     are returned.
 
-    Parameters:
-    data: list of sets or list of lists, arbitraty length
-    mode: 'set', 'length' or 'normalized'; default: 'set'
-          'set' - returns the actual set
-          'length' - returns length of the set, i.e., an int
-          'normalized' - returns length of set divided by length of all data
+    Args:
+        data (list): List of sets or list of lists, arbitraty length
+        mode (str): Output mode. Cane be 'set', 'length' or 'normalized'.
+            Default: 'set'.
+            'set' - returns the actual set
+            'length' - returns length of the set, i.e., an int
+            'normalized' - returns length of set divided by length of all data
                          points, i.e., percentage
 
     Returns:
-    combination(as set), section (as set)
+        set, set: combination, section
     '''
     data_sets = _ensure_set(data)
     no_of_sets = len(data_sets)
@@ -81,11 +82,11 @@ def _compute_combinations_for_venn_sections(repeat):
     subtracting the union of the remainder. These combinations can be represented
     using 0's and 1's. Example: AiB_CuD would be 1100, AiD_BuC would be 1001.
 
-    Parameters:
-    repeat: number of repeats in products
+    Args:
+        repeat (int): number of repeats in products
 
-    Returns:
-    tuple (generator)
+    Yields:
+        tuple
     '''
     for combi in itertools.product(range(2), repeat=repeat):
         yield combi
@@ -93,12 +94,12 @@ def _compute_combinations_for_venn_sections(repeat):
 def _sets_to_be_intersected(data, selectors):
     '''Sort sets that map to a 1/True in selectors into a list.
 
-    Parameters:
-    data: list of sets
-    selectors: list of 0's and 1's
+    Args:
+        data: list of sets
+        selectors: list of 0's and 1's
 
     Returns:
-    list of sets or empty list
+        list:  sets or empty
     '''
     to_intersect = []
     for item in itertools.compress(data, selectors):
@@ -109,12 +110,12 @@ def _sets_to_be_intersected(data, selectors):
 def _sets_to_be_unioned(data, selectors):
     '''Sort sets that map to a 0/False in selectors into a list.
 
-    Parameters:
-    data: list of sets
-    selectors: list of 0's and 1's
+    Args:
+        data (list): List of sets
+        selectors (list of int): List of 0's and 1's
 
     Returns:
-    list of sets or empty list
+        list: sets or empty
     '''
     to_union = []
     for item in compress_negative(data, selectors):
@@ -125,11 +126,11 @@ def _sets_to_be_unioned(data, selectors):
 def _ensure_set(data):
     '''Make sure that we have a list of sets.
 
-    Parameters:
-    data: list of iterables
+    Args:
+        data (list): List of iterables
 
     Returns:
-    list of sets
+        list: of sets.
     '''
     return [set(x) for x in data]
 
