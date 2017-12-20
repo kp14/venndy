@@ -27,12 +27,12 @@ def draw(data, labels=None):
     At maximum, five sets/lists will be accepted. If not labels are provided,
     uppercase letters will be used.
 
-    Parameters:
-    data: list of sets/lists
-    labels: list of strings
+    Args:
+        data (list): List of sets/lists.
+        labels (list): List of labels.
 
     Returns:
-    Rendered Venn diagram in SVG format.
+        SVG: Rendered Venn diagram.
     '''
     data_length = len(data)
 
@@ -55,12 +55,12 @@ def draw(data, labels=None):
 def _create_label_dict(labels, data_length):
     '''Create key-value pairs for filling in the SVG template on rendering.
 
-    Parameters:
-    labels: list of strings to be used as lables for the datasets
-    data_length: number of data sets (int)
+    Args:
+        labels (list): Lables for the datasets.
+        data_length (int): Number of data sets.
 
     Returns:
-    dict with labels
+        dict: with labels
     '''
     default = 'ABCDE'
     label_dict = {'A':None,
@@ -85,10 +85,10 @@ def _create_label_dict(labels, data_length):
 def _numerical_iterable2string(iterable):
     '''Translate sequences like (0,1,0,0,1) to OIOOI.
 
-    Parameters:
-    iterable: iterable with sequence consisting of 0's and 1's
+    Args:
+        iterable: iterable with sequence consisting of 0's and 1's
 
     Returns:
-    string
+        str
     '''
     return ''.join(['I' if x else 'O' for x in iterable])
