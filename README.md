@@ -1,6 +1,6 @@
 # venndy
 
-A package for computing sections of and drawing Venn diagrams.
+## A package for computing sections of and drawing Venn diagrams.
 
 Since computing section without drawing them might be desirable, there are
 two separate modules for this - compute.py and draw.py. While there is no
