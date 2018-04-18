@@ -5,10 +5,34 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg2"
    height="471.62854"
-   width="634.76965">
+   width="634.76965"
+   sodipodi:docname="2_set.svg"
+   inkscape:version="0.92.0 r15299">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3838"
+     showgrid="false"
+     inkscape:zoom="1.7980252"
+     inkscape:cx="317.38483"
+     inkscape:cy="235.81427"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <defs
      id="defs4" />
   <metadata
@@ -19,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <cc:license
            rdf:resource="http://artlibre.org/licence/lal" />
       </cc:Work>
@@ -59,60 +83,56 @@
        x="572.03705"
        y="505.45328" />
   </g>
-  <g
-     style="display:inline"
-     id="layer2">
-    <text
-       id="text3054"
-       y="430.19998"
-       x="25.000004"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         style="font-size:8px"
-         y="430.19998"
-         x="25.000004"
-         id="tspan3056">{{ IO }}</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="578.57141"
-       y="49.485687"
-       id="text3058"><tspan
-         id="tspan3060"
-         x="578.57141"
-         y="49.485687"
-         style="font-size:8px">{{ OI }}</tspan></text>
-    <text
-       id="text3062"
-       y="428.77142"
-       x="582.14288"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         style="font-size:8px"
-         y="428.77142"
-         x="582.14288"
-         id="tspan3064">{{ II }}</tspan></text>
-    <text
-       id="text3116"
-       y="225.19997"
-       x="28.571428"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         style="font-size:20px"
-         y="225.19997"
-         x="28.571428"
-         id="tspan3118">{{ A }}</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="253.57143"
-       y="55.914253"
-       id="text3120"><tspan
-         id="tspan3122"
-         x="253.57143"
-         y="55.914253"
-         style="font-size:20px">{{ B }}</tspan></text>
-  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="149.58113"
+     y="343.99429"
+     id="text3054"><tspan
+       id="tspan3056"
+       x="149.58113"
+       y="343.99429"
+       style="font-size:8px">{{ IO }}</tspan></text>
+  <text
+     id="text3058"
+     y="137.91603"
+     x="455.65878"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     xml:space="preserve"><tspan
+       style="font-size:8px"
+       y="137.91603"
+       x="455.65878"
+       id="tspan3060">{{ OI }}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="455.3371"
+     y="341.4534"
+     id="text3062"><tspan
+       id="tspan3064"
+       x="455.3371"
+       y="341.4534"
+       style="font-size:8px">{{ II }}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="33.020756"
+     y="264.13156"
+     id="text3116"><tspan
+       id="tspan3118"
+       x="33.020756"
+       y="264.13156"
+       style="font-size:20px">{{ A }}</tspan></text>
+  <text
+     id="text3120"
+     y="57.582752"
+     x="318.64282"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     xml:space="preserve"><tspan
+       style="font-size:20px"
+       y="57.582752"
+       x="318.64282"
+       id="tspan3122">{{ B }}</tspan></text>
   <g
      transform="translate(-259.91735,-161.79798)"
      style="display:none"
