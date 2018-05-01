@@ -10,3 +10,6 @@ to at most five sets as Venn diagrams for more sets are hard to read anyway.
 The SVG template for the Venn diagrams are based on Edward's design. I just
 drew them in a more angular way. Templates were made using Inkscape and, thus,
 can easily be loaded and modified using it.
+
+Example:
+![example](docs/_static/venndy_example.png)
